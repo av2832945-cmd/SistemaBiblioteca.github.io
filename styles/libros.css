@@ -1,0 +1,169 @@
+/* Fichas de libros, disponibilidad y acciones de las tarjetas. */
+
+.book-card {
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  background: var(--paper);
+  box-shadow: 3px 3px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  border-bottom: 1px solid var(--red);
+  padding: 9px 10px;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.card-meta span:first-child {
+  overflow-wrap: anywhere;
+}
+
+.book-card-body {
+  padding: 13px 12px 15px;
+  flex: 1;
+}
+
+.book-title-row {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: start;
+  justify-content: space-between;
+  gap: 9px;
+}
+
+.book-card h2 {
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: -.5px;
+  overflow-wrap: anywhere;
+}
+
+.stamp {
+  border: 1px solid currentColor;
+  transform: rotate(-7deg);
+  padding: 3px 4px;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: .6px;
+  white-space: nowrap;
+}
+
+.stamp.available {
+  color: #147b53;
+}
+
+.stamp.last {
+  color: #996100;
+}
+
+.stamp.empty {
+  color: var(--red);
+}
+
+.book-author {
+  margin-top: 9px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.category {
+  display: inline-block;
+  border: 1px solid var(--ink);
+  padding: 2px 7px;
+  border-radius: 12px;
+  background: var(--pink);
+  font-size: 9px;
+  margin-top: 8px;
+}
+
+.category.ciencias {
+  background: var(--green);
+  color: white;
+}
+
+.category.tecnologia {
+  background: var(--blue);
+  color: white;
+}
+
+.category.historia {
+  background: var(--yellow);
+}
+
+.stock {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 9px;
+  font-weight: bold;
+  margin-top: 13px;
+  line-height: 1.4;
+}
+
+.stock-bars {
+  display: flex;
+  gap: 2px;
+  align-items: end;
+  flex-shrink: 0;
+}
+
+.stock-bars i {
+  width: 7px;
+  height: 18px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.stock-bars i:nth-child(2n) {
+  height: 21px;
+}
+
+.stock-bars i.filled {
+  background: var(--pink);
+}
+
+.card-actions {
+  display: flex;
+  border-top: 1px solid var(--ink);
+}
+
+.card-actions button {
+  border: 0;
+  background: transparent;
+  padding: 11px 5px;
+  flex: 1;
+  font-size: 11px;
+  font-weight: bold;
+  min-height: 38px;
+}
+
+.card-actions button + button {
+  border-left: 1px solid var(--ink);
+}
+
+.card-actions button:hover {
+  background: var(--background);
+}
+
+.delete-action {
+  color: var(--red);
+}
+
+.history-action {
+  color: var(--blue);
+}
+
+.result-count {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 15px 0 22px;
+  line-height: 1.5;
+}

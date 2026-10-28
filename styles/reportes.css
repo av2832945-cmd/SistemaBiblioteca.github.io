@@ -1,0 +1,244 @@
+/* Estadísticas y reportes del catálogo. */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  min-width: 0;
+  min-height: 142px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.metric-card.card-blue { background: var(--blue); color: #fff; }
+.metric-card.card-pink { background: var(--pink); color: var(--ink); }
+.metric-card.card-yellow { background: var(--yellow); color: var(--ink); }
+.metric-card.card-green { background: var(--green); color: #fff; }
+
+.metric-title,
+.metric-sub,
+.chart-header .small-text,
+.overdue-info span {
+  font-family: "Courier New", monospace;
+}
+
+.metric-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.metric-value {
+  margin: 0.35rem 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.metric-sub {
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.reports-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(270px, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.chart-box,
+.overdue-list-box {
+  min-width: 0;
+  padding: 1.35rem;
+}
+
+.chart-header,
+.overdue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-header h2,
+.overdue-header h2 {
+  font-size: 1.25rem;
+}
+
+.chart-header .small-text {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.shelf-chart {
+  position: relative;
+  height: 275px;
+  padding: 1.25rem 0.75rem 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: clamp(0.5rem, 2vw, 1.4rem);
+  border-left: 3px solid var(--line);
+  border-right: 3px solid var(--line);
+}
+
+.chart-bar {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 72px;
+  min-width: 28px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid var(--ink);
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  box-shadow: inset -4px 0 0 rgb(0 0 0 / 10%);
+}
+
+.bar-pink { background: var(--pink); }
+.bar-blue { background: var(--blue); }
+.bar-yellow { background: var(--yellow); }
+.bar-green { background: var(--green); }
+.bar-dark { background: var(--ink); color: #fff; }
+
+.bar-value {
+  position: absolute;
+  top: -1.65rem;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.bar-label {
+  align-self: flex-end;
+  max-height: 150px;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  color: inherit;
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.shelf-base {
+  height: 8px;
+  margin: 0 -0.75rem;
+  border-radius: 4px;
+  background: var(--ink);
+}
+
+.overdue-header {
+  align-items: center;
+}
+
+.overdue-header .count-badge {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.overdue-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.overdue-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgb(216 47 78 / 25%);
+}
+
+.overdue-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.overdue-info strong {
+  overflow-wrap: anywhere;
+}
+
+.overdue-info span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.overdue-list .red-stamp {
+  position: static;
+  max-width: none;
+  flex: 0 0 auto;
+  padding: 0.25rem 0.4rem;
+  border: 2px solid var(--red);
+  border-radius: 4px;
+  color: var(--red);
+  font-family: "Courier New", monospace;
+  font-size: 0.68rem;
+  font-weight: 900;
+  white-space: nowrap;
+  transform: rotate(-5deg);
+}
+
+.report-empty {
+  align-self: center;
+  padding: 1.2rem 0.25rem;
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+}
+
+.reports-layout .report-empty {
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reports-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+  .chart-box,
+  .overdue-list-box { padding: 1rem; }
+  .chart-header { align-items: flex-start; flex-direction: column; gap: 0.35rem; }
+  .shelf-chart { height: 235px; gap: 0.35rem; }
+  .bar-label { font-size: 0.65rem; }
+}
+
+@media print {
+  @page { size: letter landscape; margin: 12mm; }
+  body { background: #fff; }
+  #login-screen,
+  .app-header,
+  .app-footer,
+  #export-pdf,
+  #app-screen main > section:not(#reports-page) { display: none !important; }
+  #app-screen,
+  #reports-page { display: block !important; }
+  .app-shell { max-width: none; padding: 0; }
+  .metrics-grid { grid-template-columns: repeat(4, 1fr); }
+  .reports-layout { grid-template-columns: 2fr 1fr; }
+  .metric-card,
+  .chart-box,
+  .overdue-list-box { break-inside: avoid; box-shadow: none; }
+}

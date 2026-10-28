@@ -1,0 +1,295 @@
+/* Colores, tipografías, botones, mensajes y elementos compartidos. */
+
+:root {
+  --background: #ebe8f5;
+  --paper: #fffef8;
+  --ink: #201c31;
+  --blue: #3043df;
+  --pink: #ff65aa;
+  --yellow: #ffda4b;
+  --green: #209c70;
+  --red: #d82f4e;
+  --muted: #625d75;
+  --line: #b6bdf1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--background);
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.eyebrow,
+.label-tag,
+.section-label,
+label,
+.small-code,
+.paper-top,
+.date-stamp,
+.return-slip,
+.demo-note,
+.card-meta,
+.stamp,
+.result-count,
+.field-note,
+.book-author,
+.category,
+.stock,
+.reader-band,
+.reader-contact,
+.reader-stock,
+.history-meta,
+.history-table,
+.app-footer,
+.local-note {
+  font-family: "Courier New", monospace;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+}
+
+.brand strong {
+  font-size: 29px;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.blue {
+  background: var(--blue);
+  color: white;
+}
+
+.pink {
+  background: var(--pink);
+}
+
+.yellow {
+  background: var(--yellow);
+}
+
+.green {
+  background: var(--green);
+}
+
+.cream {
+  background: var(--paper);
+}
+
+.dark {
+  background: var(--ink);
+  color: white;
+}
+
+.label-tag,
+.section-label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  font-weight: 700;
+  border: 1px solid var(--ink);
+  padding: 6px 9px;
+}
+
+.label-tag {
+  background: var(--yellow);
+}
+
+.section-label {
+  background: var(--paper);
+}
+
+.paper {
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+}
+
+.button {
+  border: 1.5px solid var(--ink);
+  border-radius: 5px;
+  padding: 13px 18px;
+  font-weight: 700;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .15s, box-shadow .15s;
+  font-size: 13px;
+}
+
+.button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.primary {
+  color: white;
+  background: var(--blue);
+}
+
+.secondary {
+  background: var(--paper);
+}
+
+.danger {
+  background: var(--red);
+  color: white;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 38px 20px;
+  border: 1px dashed var(--ink);
+  text-align: center;
+  line-height: 1.8;
+  font-size: 14px;
+  background: #fffef860;
+}
+
+.empty-state strong {
+  display: block;
+  font-size: 20px;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 50px;
+  border-top: 1px solid #bcb6cc;
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.form-error {
+  border: 1px dashed var(--red);
+  padding: 11px;
+  color: #b51e38;
+  background: #fff1f2;
+  font: bold 11px/1.6 "Courier New", monospace;
+  margin: 12px 0;
+}
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: white;
+  padding: 14px 20px;
+  font-size: 13px;
+  border: 1px solid var(--paper);
+  box-shadow: 4px 4px var(--pink);
+  z-index: 10;
+  max-width: calc(100% - 35px);
+  width: max-content;
+  line-height: 1.5;
+}
+
+.delete-dialog {
+  max-width: 420px;
+  width: calc(100% - 36px);
+  padding: 25px;
+  box-shadow: 6px 6px var(--pink);
+  color: var(--ink);
+}
+
+.delete-dialog::backdrop {
+  background: #201c3166;
+}
+
+.delete-dialog h2 {
+  margin: 15px 0;
+  font-size: 28px;
+}
+
+.delete-dialog p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.delete-dialog .form-actions {
+  justify-content: end;
+  margin-top: 23px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

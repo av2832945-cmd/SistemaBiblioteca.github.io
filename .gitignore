@@ -1,0 +1,10 @@
+# Archivos locales de referencia y copias del proyecto
+/Biblioteca.rar
+/Biblioteca_descomprimida/
+/Sistema de Biblioteca.pdf
+
+# Archivos temporales y dependencias instaladas
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

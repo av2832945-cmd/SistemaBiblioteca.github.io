@@ -1,0 +1,246 @@
+/* Pantalla de acceso, ilustración de libros y campos de entrada. */
+
+.login-screen {
+  max-width: 1440px;
+  margin: auto;
+  padding: 44px 5% 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.login-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 9%;
+  min-height: calc(100vh - 120px);
+}
+
+.login-intro {
+  padding-top: 60px;
+}
+
+.login-intro h1 {
+  font-size: clamp(50px, 6.6vw, 90px);
+  line-height: .98;
+  letter-spacing: -5px;
+  text-shadow: 5px 5px 0 var(--pink);
+  margin: 23px 0;
+}
+
+.login-intro > p {
+  max-width: 410px;
+  color: #4d4763;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.illustrated-shelf {
+  height: 250px;
+  margin-top: 65px;
+  display: flex;
+  align-items: end;
+  gap: 5px;
+  border-bottom: 14px solid var(--ink);
+  padding: 0 6px;
+}
+
+.spine {
+  height: 175px;
+  width: 42px;
+  flex: 1;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px 3px 0 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  padding: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: inset 0 13px #201c3126, inset 0 -13px #201c3126;
+}
+
+.spine.tall {
+  height: 210px;
+}
+
+.spine.tallest {
+  height: 226px;
+  border-top: 15px solid var(--green);
+  border-bottom: 15px solid var(--green);
+}
+
+.spine.short {
+  height: 136px;
+}
+
+.spine.medium {
+  height: 167px;
+}
+
+.spine.high {
+  height: 196px;
+  border-top: 18px solid var(--yellow);
+  border-bottom: 18px solid var(--yellow);
+}
+
+.spine.leaning {
+  transform: rotate(13deg);
+  height: 163px;
+  margin-left: 13px;
+  transform-origin: bottom;
+}
+
+.spine.striped {
+  background: repeating-linear-gradient(90deg, var(--blue) 0 6px, var(--paper) 6px 11px);
+}
+
+.spine.ruled {
+  background: repeating-linear-gradient(0deg, var(--yellow) 0 15px, var(--ink) 15px 17px);
+  max-width: 30px;
+}
+
+.login-card-wrap {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  margin: 25px auto 65px;
+}
+
+.login-card {
+  transform: rotate(-1.5deg);
+  position: relative;
+  box-shadow: 7px 7px 0 var(--blue);
+  z-index: 1;
+}
+
+.paper-top {
+  border-bottom: 1px solid var(--red);
+  padding: 15px 19px;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.punch-hole {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: var(--background);
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+}
+
+.login-card-content {
+  padding: 23px 26px 24px;
+}
+
+.login-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.login-title h2 {
+  font-size: 30px;
+  letter-spacing: -1.5px;
+}
+
+.date-stamp {
+  color: #6c37d7;
+  border: 2px solid #6c37d7;
+  transform: rotate(8deg);
+  padding: 7px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1.1px;
+}
+
+input,
+select {
+  width: 100%;
+  color: var(--ink);
+  background: transparent;
+  min-width: 0;
+}
+
+.login-card input,
+.editor input {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 12px 1px;
+  margin-bottom: 20px;
+  font: 13px "Courier New", monospace;
+}
+
+input::placeholder {
+  color: #797481;
+  opacity: 1;
+}
+
+.login-submit {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+  margin: 4px 0 18px;
+}
+
+.demo-note {
+  padding: 11px;
+  border: 1px dashed #7e7890;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.demo-note span,
+.demo-note strong {
+  display: block;
+}
+
+.demo-note strong {
+  font-size: 9px;
+  letter-spacing: .6px;
+}
+
+.return-slip {
+  position: absolute;
+  background: var(--yellow);
+  border: 1.5px solid var(--ink);
+  border-radius: 5px;
+  bottom: -31px;
+  left: 12px;
+  right: 12px;
+  padding: 13px 10px;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 2px;
+  transform: rotate(2deg);
+}
+
+.local-note {
+  position: absolute;
+  top: calc(100% + 54px);
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--muted);
+}

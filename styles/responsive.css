@@ -1,0 +1,234 @@
+/* Adaptaciones para pantallas pequeñas y movimiento reducido. Cargar al final. */
+
+@media (min-width: 1440px) {
+  .login-layout {
+    min-height: 780px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 20px;
+  }
+
+  .book-grid,
+  .reader-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .login-layout {
+    gap: 6%;
+  }
+
+  .login-intro h1 {
+    letter-spacing: -3px;
+  }
+
+  .login-card-content {
+    padding: 22px;
+  }
+
+  .filters button {
+    padding: 12px 10px;
+  }
+
+  .login-title h2 {
+    font-size: 27px;
+  }
+
+  /* --- Reportes --- */
+  .reports-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .login-screen {
+    padding: 25px 7% 60px;
+  }
+
+  .login-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .login-intro {
+    padding-top: 40px;
+  }
+
+  .login-intro h1 {
+    font-size: clamp(49px, 11vw, 75px);
+  }
+
+  .login-intro > p {
+    font-size: 16px;
+  }
+
+  .illustrated-shelf {
+    display: none;
+  }
+
+  .login-card-wrap {
+    margin: 12px auto 65px;
+  }
+
+  .app-shell {
+    padding: 15px 5% 0;
+  }
+
+  .app-header {
+    margin-bottom: 27px;
+    min-height: 92px;
+  }
+
+  .brand strong {
+    font-size: 25px;
+  }
+
+  .nav-book {
+    width: 35px;
+    padding: 10px 9px;
+    font-size: 11px;
+    height: 78px;
+  }
+
+  .nav-book[data-page="usuarios"] {
+    height: 90px;
+  }
+
+  .nav-book:hover,
+  .nav-book[aria-current="page"] {
+    height: 98px;
+  }
+
+  .nav-book:last-child {
+    height: 63px;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .section-heading > .button {
+    align-self: start;
+  }
+
+  .section-heading h1 {
+    font-size: 35px;
+  }
+
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .editor,
+  .history-panel {
+    max-width: 100%;
+  }
+
+  .book-grid,
+  .reader-grid {
+    gap: 13px;
+  }
+
+  .app-footer {
+    flex-direction: column;
+    line-height: 1.6;
+    margin-top: 35px;
+  }
+
+  .history-table {
+    font-size: 11px;
+  }
+
+  .history-table td:first-child {
+    font-size: 13px;
+  }
+
+  /* --- Préstamos --- */
+  .loan-form-layout {
+    flex-direction: column;
+  }
+
+  .stamp-preview {
+    border-left: none;
+    border-top: 2px dashed var(--ink);
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .active-loans-section .section-subheading {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* --- Reportes --- */
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .book-grid,
+  .reader-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h1 {
+    font-size: 30px;
+  }
+
+  .login-intro h1 {
+    font-size: 47px;
+  }
+
+  .login-card-content {
+    padding: 21px 17px;
+  }
+
+  .login-title h2 {
+    font-size: 25px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+  }
+
+  .shelf-nav {
+    gap: 4px;
+  }
+
+  .nav-book {
+    width: 31px;
+    padding-inline: 7px;
+  }
+
+  /* --- Reportes --- */
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

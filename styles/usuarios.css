@@ -1,0 +1,185 @@
+/* Carnés de lectores e historial de préstamos. */
+
+.reader-card {
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 3px 3px var(--ink);
+  min-width: 0;
+}
+
+.reader-card.selected {
+  box-shadow: 3px 3px var(--blue);
+  border-color: var(--blue);
+}
+
+.reader-band {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  gap: 5px;
+}
+
+.reader-card-body {
+  padding: 16px 13px 14px;
+}
+
+.reader-name {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-bottom: 13px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 1px 1px #201c3150;
+}
+
+.reader-name h2 {
+  font-size: 15px;
+  letter-spacing: -.5px;
+  overflow-wrap: anywhere;
+}
+
+.reader-contact {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.reader-stock {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.barcode {
+  width: 75px;
+  height: 30px;
+  opacity: .8;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 3px, var(--ink) 3px 6px, transparent 6px 7px, var(--ink) 7px 8px, transparent 8px 11px);
+}
+
+.reader-stock p {
+  text-align: right;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.reader-stock strong {
+  display: block;
+  font: bold 25px Arial, sans-serif;
+  margin-bottom: 3px;
+}
+
+.history-panel {
+  box-shadow: 4px 4px var(--pink);
+}
+
+.history-heading {
+  padding: 18px 15px 15px;
+  border-bottom: 1px solid var(--red);
+}
+
+.history-heading .eyebrow {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.history-heading h2 {
+  font-size: 24px;
+  letter-spacing: -.8px;
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+
+.history-meta {
+  font-size: 9px;
+  color: var(--muted);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 10px;
+}
+
+.history-table th {
+  font-size: 8px;
+  letter-spacing: .7px;
+  text-align: left;
+  padding: 12px 9px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.history-table th:first-child {
+  width: 42%;
+}
+
+.history-table td {
+  padding: 13px 9px;
+  border-bottom: 1px solid #d7d2df;
+  vertical-align: middle;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.history-table td:first-child {
+  font: bold 11px Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.history-table td + td,
+.history-table th + th {
+  border-left: 1px solid #d7d2df;
+}
+
+.loan-open {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.loan-returned {
+  color: #147b53;
+  font-weight: bold;
+}
+
+.history-totals {
+  display: flex;
+  gap: 8px;
+  padding: 16px 13px 4px;
+}
+
+.history-totals span {
+  border: 1px solid var(--ink);
+  border-radius: 15px;
+  font: 10px "Courier New", monospace;
+  padding: 5px 7px;
+}
+
+.history-empty {
+  padding: 25px 16px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
